@@ -1,0 +1,66 @@
+Orden:
+crear la imagen de manera local
+subir la imagen a docker hub 
+
+Docker:
+docker login 
+docker build -t francisz2/pod1b .
+docker push francisz2/pod1b:latest
+docker push nombre de la image
+
+Creación del cluster:
+minikube start --driver=hyperv
+
+Después de configurados los pods:
+kubectl apply -f pod1.yaml
+kubectl apply -f pod2.yaml
+
+Ver Clústers Actuales:
+kubectl config get-contexts
+kubectl get svc
+
+Ver Información del cluster Actual:
+kubectl config current-context
+
+Eliminar pod:
+kubectl delete pod pod1
+kubectl describe pod pod2
+
+Ver detalles y errores de un pod específico:
+kubectl describe pod pod1
+kubectl describe pod pod2
+
+Ver los pods actuales:
+kubectl get pods
+
+Ver los logs/registros:
+kubectl logs pod1
+kubectl logs pod2
+
+Abrir minikube gráfica web:
+minikube dashboard
+
+kubectl run pod1 --image=francisz2/pod1b --port=3000 3000
+kubectl run pod1 --image=francisz2/pod1b --port=3001 3001
+
+Exponer el pod:
+kubectl expose pod nombre_pod --type=loadbalancer --port puerto --target puerto
+
+Para obtener la dirección para acceder
+kubectl get svc
+minikube service nombre_servicio
+
+Para acceder al servicio:
+minikube service nombre_servicio
+
+Cargar imagen minikune
+minikube image load mi_imagen_local:latest
+
+En caso de tener que reiniciar:
+minikube start
+minikube dashboard
+kubectl get pods
+kubectl get svc
+kubectl apply -f pod1.yaml
+kubectl apply -f pod2.yaml
+minikube service nombre_servicio
