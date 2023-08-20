@@ -1,2 +1,2 @@
 # Kubernetes-y-NodeJS
-# Proyecto_final-Alg-paralelo
+# Proyecto_final-Algoritmo-paralelo
